@@ -1,0 +1,106 @@
+Picked up from http://sed.sourceforge.net/sed1line.txt
+sed 's/\x0D$//'            # works on ssed, gsed 3.02.80 or higher
+sed 's/foo/bar/4'            # replaces only 4th instance in a line
+
+# substitute "foo" with "bar" ONLY for lines which contain "baz"
+ sed '/baz/s/foo/bar/g'
+
+ # substitute "foo" with "bar" EXCEPT for lines which contain "baz"
+ sed '/baz/!s/foo/bar/g'
+
+ # change "scarlet" or "ruby" or "puce" to "red"
+ sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'   # most seds
+ gsed 's/scarlet\|ruby\|puce/red/g'                # GNU sed only
+
+ # add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)
+ gsed '0~5G'                  # GNU sed only
+ sed 'n;n;n;n;G;'             # other seds
+
+# print only lines which match regular expression (emulates "grep")
+ sed -n '/regexp/p'           # method 1
+ sed '/regexp/!d'             # method 2
+
+ # print the line immediately after a regexp, but not the line
+ # containing the regexp
+ sed -n '/regexp/{n;p;}'
+
+# grep for AAA and BBB and CCC (in any order)
+ sed '/AAA/!d; /BBB/!d; /CCC/!d'
+
+# print only lines of 65 characters or longer
+ sed -n '/^.\{65\}/p'
+
+ # print only lines of less than 65 characters
+ sed -n '/^.\{65\}/!p'        # method 1, corresponds to above
+ sed '/^.\{65\}/d'            # method 2, simpler syntax
+
+ # print section of file from regular expression to end of file
+ sed -n '/regexp/,$p'
+
+ # print section of file based on line numbers (lines 8-12, inclusive)
+ sed -n '8,12p'               # method 1
+ sed '8,12!d'                 # method 2
+
+ # print line number 52
+ sed -n '52p'                 # method 1
+ sed '52!d'                   # method 2
+ sed '52q;d'                  # method 3, efficient on large files
+
+ # beginning at line 3, print every 7th line
+ gsed -n '3~7p'               # GNU sed only
+ sed -n '3,${p;n;n;n;n;n;n;}' # other seds
+
+# print section of file between two regular expressions (inclusive)
+ sed -n '/Iowa/,/Montana/p'             # case sensitive
+
+SELECTIVE DELETION OF CERTAIN LINES:
+
+ # print all of file EXCEPT section between 2 regular expressions
+ sed '/Iowa/,/Montana/d'
+
+ # delete the first 10 lines of a file
+ sed '1,10d'
+
+ # delete the last line of a file
+ sed '$d'
+
+# delete every 8th line
+ gsed '0~8d'                           # GNU sed only
+ sed 'n;n;n;n;n;n;n;d;'                # other seds
+
+ # delete lines matching pattern
+ sed '/pattern/d'
+
+ # delete ALL blank lines from a file (same as "grep '.' ")
+ sed '/^$/d'                           # method 1
+ sed '/./!d'                           # method 2
+
+ # delete all leading blank lines at top of file
+ sed '/./,$!d'
+
+USE OF '\t' IN SED SCRIPTS: For clarity in documentation, we have used
+the expression '\t' to indicate a tab character (0x09) in the scripts.
+However, most versions of sed do not recognize the '\t' abbreviation,
+so when typing these scripts from the command line, you should press
+the TAB key instead. '\t' is supported as a regular expression
+metacharacter in awk, perl, and HHsed, sedmod, and GNU sed v3.02.80.
+
+In addition, remember that while many versions of sed accept a command
+like "/one/ s/RE1/RE2/", some do NOT allow "/one/! s/RE1/RE2/", which
+contains space before the 's'. Omit the space when typing the command.
+
+OPTIMIZING FOR SPEED: If execution speed needs to be increased (due to
+large input files or slow processors or hard disks), substitution will
+be executed more quickly if the "find" expression is specified before
+giving the "s/.../.../" instruction. Thus:
+
+   sed 's/foo/bar/g' filename         # standard replace command
+   sed '/foo/ s/foo/bar/g' filename   # executes more quickly
+   sed '/foo/ s//bar/g' filename      # shorthand sed syntax
+
+On line selection or deletion in which you only need to output lines
+from the first part of the file, a "quit" command (q) in the script
+will drastically reduce processing time for large files. Thus:
+
+   sed -n '45,50p' filename           # print line nos. 45-50 of a file
+   sed -n '51q;45,50p' filename       # same, but executes much faster
