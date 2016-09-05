@@ -1,0 +1,4 @@
+1. Read this http://www.grymoire.com/Unix/Sed.html . It seems to have all that one needs to know except details about regex.
+It is critical to understand pattern buffer, hold buffer, input stream and output stream.
+http://www.tutorialspoint.com/sed/index.htm seems to be good too with more details about branch and better multiple page style orgnization.
+2. Test yourself with http://sed.sourceforge.net/sed1line.txt . If too difficult, find answer here: http://www.catonmat.net/blog/sed-one-liners-explained-part-one/
