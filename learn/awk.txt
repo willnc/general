@@ -1,0 +1,4 @@
+I read this:
+http://www.tutorialspoint.com/awk/index.htm
+
+I stopped when I see the long list of functions. I want to go with perl -lane for more complicated cases. awk's $1 syntax is faster to type than $F[0]. Otherwise, I didn't a reason to use awk for more complciated task.
