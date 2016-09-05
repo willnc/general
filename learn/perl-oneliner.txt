@@ -1,0 +1,18 @@
+I read this: https://blogs.oracle.com/ksplice/entry/the_top_10_tricks_of . It is good.
+
+I use -pe and -ipe all the time. I am aware of .. .  It is good to know:
+l: so it can be more like sed/awk
+a: so it can be like awk
+BEGIN, END: I will stop using awk except for simple case when $1 has the advantage of typing faster.
+F: to define IFS like awk
+%ENV{} trick: yes, I struggled with things like '$var' regularly. This save me from such trouble.
+\K: not sure if it is very useful. I guess, those match forward/backward thing can also do it.
+
+I like this document since it explains more useful thing clearly with examples.
+
+I think I will want to add alias like this:
+alias pawk='perl -lane'
+alias psed='perl -ple'
+alias psedn='perl -nle'
+
+Inspired by perl's invasion to sed and awk, I also want a funtion that will parse http query string to hash.  This way, we have the progression of string of line, array of fields, hash.
