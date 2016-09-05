@@ -1,4 +1,9 @@
 1. Read this http://www.grymoire.com/Unix/Sed.html . It seems to have all that one needs to know except details about regex.
 It is critical to understand pattern buffer, hold buffer, input stream and output stream.
 http://www.tutorialspoint.com/sed/index.htm seems to be good too with more details about branch and better multiple page style orgnization.
+There are many more tutorials from Google search. I didn't read them.
+
 2. Test yourself with http://sed.sourceforge.net/sed1line.txt . If too difficult, find answer here: http://www.catonmat.net/blog/sed-one-liners-explained-part-one/
+This seems to be the only popular sed oneliner and the only explained. I guess there is no point to write another "explained" article. 
+
+3. I still need to learn more about regex vs. extended regex vs. Perl regex in order to use sed more. I am only familiar with Perl regex. It will be great if sed can have -P like grep does to support Perl regex.
