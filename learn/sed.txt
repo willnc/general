@@ -6,4 +6,4 @@ There are many more tutorials from Google search. I didn't read them.
 2. Test yourself with http://sed.sourceforge.net/sed1line.txt . If too difficult, find answer here: http://www.catonmat.net/blog/sed-one-liners-explained-part-one/
 This seems to be the only popular sed oneliner and the only explained. I guess there is no point to write another "explained" article. 
 
-3. I still need to learn more about regex vs. extended regex vs. Perl regex in order to use sed more. I am only familiar with Perl regex. It will be great if sed can have -P like grep does to support Perl regex.
+3. I am still ignorant about regex vs. extended regex vs. Perl regex. I am only familiar with Perl regex. It will be great if sed can have -P like grep does to support Perl regex. Before that, I will use perl -le instead for more complicated regular expression.
