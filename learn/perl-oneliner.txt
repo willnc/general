@@ -16,3 +16,5 @@ alias psed='perl -ple'
 alias psedn='perl -nle'
 
 Inspired by perl's invasion to sed and awk, I also want a funtion that will parse http query string to hash.  This way, we have the progression of string of line, array of fields, hash.
+
+Next, read https://www.nostarch.com/perloneliners
