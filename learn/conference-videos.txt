@@ -1,4 +1,14 @@
-https://www.openstack.org/videos/summits/show/6
+By vendor:
 https://www.usenix.org/conference/srecon16/program
+safari has videos for Oreilly related conference including Velocity.
+
+By technology:
+https://www.openstack.org/videos/summits/show/6
+
 https://www.ansible.com/webinars-training#on-demand
 https://www.ansible.com/videos-ansiblefest-sf-2016
+
+http://electric-cloud.com/devops-enterprise-summit/
+https://sammart.in/devops-conference-videos/
+
+http://ceph.com/events/ceph-developer-summit-summary-and-session-videos/
