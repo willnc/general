@@ -12,3 +12,5 @@ http://electric-cloud.com/devops-enterprise-summit/
 https://sammart.in/devops-conference-videos/
 
 http://ceph.com/events/ceph-developer-summit-summary-and-session-videos/
+
+http://2016.dockercon.com/
