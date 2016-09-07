@@ -1,1 +1,5 @@
+Good step by step introductions of a few things:
+http://www.kernel-overload.com/ansible-basic-usage-and-common-issues-encountered/
+http://www.kernel-overload.com/ansible-roles-explained-in-practice/
+
 https://www.ansible.com/blog/ansible-best-practices-essentials
