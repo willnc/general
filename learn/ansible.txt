@@ -8,3 +8,10 @@ https://zncb.me/blog/2016/03/11/sneaky-ansible-pitfalls/
 https://www.ansible.com/blog/ansible-best-practices-essentials
 http://docs.ansible.com/ansible/playbooks_best_practices.html
 http://docs.ansible.com/ansible/playbooks_delegation.html
+
+
+Good argument about the needs to read other people's code here:
+http://www.tutorialspoint.com/developers_best_practices/code_reading.htm
+
+I am going to read:
+https://github.com/ansible/ansible-examples/
