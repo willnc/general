@@ -6,9 +6,12 @@ But variable is confusing:
 https://zncb.me/blog/2016/03/11/sneaky-ansible-pitfalls/
 
 https://www.ansible.com/blog/ansible-best-practices-essentials
-http://docs.ansible.com/ansible/playbooks_best_practices.html
-http://docs.ansible.com/ansible/playbooks_delegation.html
+So, use native yaml, and write your own module feeling the urge to use run commands (raw, command, shell, script).
 
+http://docs.ansible.com/ansible/playbooks_best_practices.html
+
+http://docs.ansible.com/ansible/playbooks_delegation.html
+involve syntax like delegate_to, delegate_facts, group_by, run_once, any_errors_fatal, serial, max_fail_percentage.
 
 Good argument about the needs to read other people's code here:
 http://www.tutorialspoint.com/developers_best_practices/code_reading.htm
