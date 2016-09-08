@@ -9,12 +9,19 @@ https://www.ansible.com/blog/ansible-best-practices-essentials
 So, use native yaml, and write your own module feeling the urge to use run commands (raw, command, shell, script).
 
 http://docs.ansible.com/ansible/playbooks_best_practices.html
+It is good. I should have read it earlier to know about role. Role is for orgnization prupose when I started to have more than 5 files.
 
 http://docs.ansible.com/ansible/playbooks_delegation.html
 involve syntax like delegate_to, delegate_facts, group_by, run_once, any_errors_fatal, serial, max_fail_percentage.
 
 Good argument about the needs to read other people's code here:
 http://www.tutorialspoint.com/developers_best_practices/code_reading.htm
+
+I need lvm now. I am going to work on ansible-lvm role.
+
+I struggled with iptables playbook earlier this year. Now, I learned about the iptable module. I should have searched for it first. But I do not like that module. This one is better:
+http://blog.nordeus.com/dev-ops/managing-iptables-with-ansible-the-easy-way.htm
+I am going to study it in more details. I guess it uses iptables comments to track state, which is inspiring.
 
 I am going to read:
 https://github.com/ansible/ansible-examples/
